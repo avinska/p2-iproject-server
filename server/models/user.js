@@ -2,7 +2,7 @@
 const {
   Model
 } = require('sequelize');
-const { hashPassword } = require('../helpers/bcrypt');
+const { hashPassword } = require('../helpers/index');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -53,6 +53,10 @@ module.exports = (sequelize, DataTypes) => {
     isPremium: {
       type: DataTypes.BOOLEAN,
       defaultValue: false
+    },
+    avatar: {
+      type: DataTypes.TEXT,
+      defaultValue: "https://st3.depositphotos.com/6672868/13801/v/600/depositphotos_138013506-stock-illustration-user-profile-group.jpg"
     },
   }, {
     sequelize,
